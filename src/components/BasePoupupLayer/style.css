@@ -1,0 +1,18 @@
+.background-poupup-container {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.background-poupup-container .background-poupup-box {
+    background: #fff;
+    height: min-content;
+    border-radius: 8px;
+}

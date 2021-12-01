@@ -1,0 +1,17 @@
+.foward-page-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 10rem;
+    justify-content: space-between;
+}
+
+.foward-page-container .foward-page-icon {
+    cursor: pointer;
+    width: .6rem;
+}
+
+.foward-page-container .foward-page-list-number {
+    color: #fff;
+    font-size: 1.3rem;
+}
