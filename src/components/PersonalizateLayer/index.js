@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 
 import { Link } from 'react-router-dom';
 
@@ -7,14 +7,20 @@ import userAvatar from '../../assets/user-avatar.svg';
 
 import FormValidate from "../../services/FormValidate";
 
+import UserContext from '../../Context/userContext';
+import api from '../../services/api';
+
 export default function PersonalizatePage() {
+    const userContext = useContext(UserContext);
+
     const nameInputRef = useRef('');
     const phoneInputRef = useRef('');
     const departmentInputRef = useRef('');
     const passwordInputRef = useRef('');
     const confirmPasswordInputRef = useRef('');
 
-    const [userImage, setUserImage] = useState(userAvatar);
+    const [userImageURL, setUserImageURL] = useState(userContext.user.image.url);
+    const [userImage, setUserImage] = useState(null);
     const [inputErrors, setInputErrors] = useState([]);
 
     const validator = new FormValidate([]);
@@ -35,19 +41,56 @@ export default function PersonalizatePage() {
         validator.hasNullableValue();
 
         setInputErrors(validator.errors);
+
+        if (inputErrors.length === 0) {
+            const userData = {
+                name: nameInputRef.current.value,
+                tel: phoneInputRef.current.value,
+                dept: departmentInputRef.current.value,
+                password: passwordInputRef.current.value,
+                image: userImage
+            };
+
+            updateUser(userData);
+        }
     };
 
     const handleUserPhoto = e => {
         let image = URL.createObjectURL(e.target.files[0]);
-        setUserImage(image);
-    }
+        setUserImageURL(image);
+        setUserImage(e.target.files[0]);
+    };
+
+    const updateUser = async userData => {
+        try {
+            await api.put(`/users/${userContext.user.id}`, userData);
+            
+            if (!userContext.user.image) {
+                await api.post(`/images/`, { user_id: userContext.user.id });
+            }
+
+            const formData = new FormData();
+            formData.append('file', userData.image);
+
+            await api.put(`/images/${userContext.user.image.id}`, formData, {
+                headers: {
+                "Content-Type": `multipart/form-data`,
+            }});
+
+            const newUser = await api.get(`/users/${userContext.user.id}`);
+
+            userContext.insertUser(newUser.data);
+        } catch (error) {
+            console.error(error);
+        }
+    };
 
     return (
         <div className="personalizate-major-container">
             <div className="personalizate-container">
                 <form action="/" method="POST" onSubmit={handleSubmit}>
                     <div className="personalizate-user-avatar">
-                        <img src={userImage} />
+                        <img src={userImageURL} />
                         <label htmlFor="user-photo">Editar foto</label>
                         <input type="file" name="user-photo" id="user-photo" multiple accept=".jpg, .png, .svg" onChange={handleUserPhoto} />
                     </div>

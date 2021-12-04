@@ -25,7 +25,7 @@ export default function ListCallsLayer({ changePoupupState, changePoupupComponen
     return (
         <div className="list-container">
             <Header />
-            <Tabs setActiveList={setActiveList} />
+            <Tabs setActiveList={setActiveList} activeList={ activeList } />
             <List activeList={activeList} changePoupupComponent={changePoupupComponent} changePoupupState={changePoupupState} />
             <div className="btn-add-call" onClick={handleAddButtonClick}>
                 <img src={plusIcon} />

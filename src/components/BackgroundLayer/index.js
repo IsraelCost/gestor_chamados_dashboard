@@ -8,7 +8,13 @@ import './style.css';
 import btnPersonalizateIcon from '../../assets/btn-personalizate.svg';
 import btnLogoutIcon from '../../assets/btn-logout.svg';
 
+import { logout } from "../../services/auth";
+
 export default function BackgroundLayer({ hasFoward }) {
+    const handleSignOut = () => {
+        logout();
+    };
+    
     return (
         <div className="background-container">
             <div className="background-lateral-bar">
@@ -22,7 +28,7 @@ export default function BackgroundLayer({ hasFoward }) {
                     </Link>
                     <div className="background-divisor"></div>
                     <Link to="/">
-                        <div className="background-button">
+                        <div className="background-button" onClick={handleSignOut}>
                             <img src={btnLogoutIcon} className="icon" />
                             <h4>Sair</h4>
                         </div>
