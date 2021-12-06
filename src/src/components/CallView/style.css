@@ -1,0 +1,40 @@
+.call-view-container {
+    max-width: 50rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.call-view-container h1 {
+    width: 100%;
+    font-size: 2.5rem;
+}
+
+.call-view-container h3 {
+    width: 100%;
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.call-view-container h4 {
+    width: 100%;
+    font-size: 1.8rem;
+    margin-bottom: .5rem;
+}
+
+.call-view-container p {
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.call-view-container button {
+    width: 12rem;
+    font-size: 1.5rem;
+    height: 4rem;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    background: #8E8E8E;
+    margin-top: 1.4rem;
+}

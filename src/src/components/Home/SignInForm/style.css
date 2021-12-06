@@ -1,0 +1,52 @@
+.container-sign-in-form {
+    background: #fff;
+    width: calc(50% - 12rem);
+    height: 53rem;
+    margin: auto;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+}
+
+.container-sign-in-form h1 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.container-sign-in-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.container-sign-in-form form input {
+    width: 100%;
+    height: 5rem;
+    border-radius: 8px;
+    border: 1px solid #F0F1F7;
+    padding: 0 1rem;
+    margin: .6rem 0;
+    font-size: 1.3rem;
+}
+
+.container-sign-in-form form button {
+    width: 12rem;
+    font-size: 1.5rem;
+    height: 4rem;
+    border-radius: 8px;
+    color: #fff;
+    background-color: #3751FF;
+    cursor: pointer;
+    margin-top: .8rem;
+}
+
+.container-sign-in-form form .input-error {
+    color: red;
+    width: 100%;
+    text-align: left;
+    font-size: 1rem;
+}

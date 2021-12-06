@@ -1,0 +1,26 @@
+.tabs-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #616161;
+}
+
+.tabs-container .tab {
+    width: auto;
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    padding: 1rem 4rem;
+    color: #616161;
+    height: 4rem;
+    cursor: pointer;
+    transition: background .4s linear;
+}
+
+.tabs-container .tab:hover {
+    background: #F0F1F7;
+}
+
+.tabs-container .tab:first-child {
+    border-right: 1px solid #616161;
+}

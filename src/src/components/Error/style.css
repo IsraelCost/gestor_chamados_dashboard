@@ -1,0 +1,30 @@
+.error-container {
+    width: 40rem;
+    height: auto;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.error-container img {
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 1.5rem;
+}
+
+.error-container .error-message {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.error-container button {
+    width: 12rem;
+    font-size: 1.5rem;
+    height: 4rem;
+    border-radius: 8px;
+    color: #fff;
+    background-color: #8E8E8E;
+    cursor: pointer;
+    margin-top: 1.5rem;
+}

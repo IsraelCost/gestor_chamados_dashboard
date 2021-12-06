@@ -1,0 +1,28 @@
+.dashboard-header {
+    width: 95%;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dashboard-header h1 {
+    font-size: 2.5rem;
+}
+
+.dashboard-header .dashboard-user-info {
+    display: flex;
+    align-items: center;
+    width: auto;
+}
+
+.dashboard-header .dashboard-user-info .dashboard-user-name {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    border-bottom: 2px solid #000;
+    margin-right: 1.5rem;
+}
+
+.dashboard-header .dashboard-user-info .dashboard-user-avatar {
+    width: 4.5rem;
+    border-radius: 50%;
+}

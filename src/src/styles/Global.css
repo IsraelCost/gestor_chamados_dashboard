@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarala:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html, textarea, input, button, * {
+    font-size: 62.5%;
+    font-family: 'Sarala', sans-serif;
+}

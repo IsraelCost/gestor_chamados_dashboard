@@ -1,0 +1,8 @@
+.btn-delete-call {
+    position: absolute;
+    right: 3rem;
+}
+
+.btn-delete-call img#icon-delete {
+    border-radius: 0%;
+}

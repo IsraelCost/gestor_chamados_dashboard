@@ -1,0 +1,38 @@
+import React from "react";
+
+import { Link } from 'react-router-dom';
+
+import './style.css';
+import btnPersonalizateIcon from '../../assets/btn-personalizate.svg';
+import btnLogoutIcon from '../../assets/btn-logout.svg';
+
+import { logout } from "../../services/auth";
+
+export default function BackgroundLayer({ hasFoward }) {
+    const handleSignOut = () => {
+        logout();
+    };
+    
+    return (
+        <div className="background-container">
+            <div className="background-lateral-bar">
+                <h1>Empresa</h1>
+                <div className="background-buttons">
+                    <Link to="/personalizar">
+                        <div className="background-button">
+                            <img src={btnPersonalizateIcon} className="icon" alt="Personalizar" />
+                            <h4>Personalizar</h4>
+                        </div>
+                    </Link>
+                    <div className="background-divisor"></div>
+                    <Link to="/">
+                        <div className="background-button" onClick={handleSignOut}>
+                            <img src={btnLogoutIcon} className="icon" alt="Sair" />
+                            <h4>Sair</h4>
+                        </div>
+                    </Link>
+                </div>
+            </div>
+        </div>
+    );
+}

@@ -1,0 +1,43 @@
+.call-list-container { 
+    height: calc(100% - 12.5rem);
+    overflow: auto;
+}
+
+.call-list-container .list-item {
+    height: 7rem;
+    width: 100%;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    transition: background .4s linear;
+}
+
+.call-list-container .list-item:hover {
+    background-color: #F0F1F7;
+}
+
+.call-list-container .list-item .list-item-informations {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 1rem;
+}
+
+.call-list-container .list-item .list-item-informations .list-item-description {
+    font-size: 1.5rem;
+    width: 25rem;
+    overflow: hidden; 
+    white-space: nowrap;    
+    text-overflow: ellipsis;
+}
+
+.call-list-container .list-item .list-item-informations h3 {
+    font-size: 1.5rem;
+}
+
+.call-list-container .list-item img {
+    width: 4rem;
+    border-radius: 50%;
+}
